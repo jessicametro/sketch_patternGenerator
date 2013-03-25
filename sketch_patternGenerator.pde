@@ -1,7 +1,7 @@
 /* VARIABLES */
 
 PFont fontRoboto;
-String letters = "";
+String sentence = "";
 
 //float hue! = ( 0 / 27 * 360 );
 float hueA = ( 1 / 27 * 360 );
@@ -81,7 +81,7 @@ void draw() {
   fill(0);
   rect(0, 0, 5, 2);
   fill(0);
-  text(letters, 50, 50);
+  text(sentence, 50, 50);
 }
 
 
@@ -90,11 +90,11 @@ void draw() {
 
 void keyPressed() {
   if (key == BACKSPACE) {
-    if (letters.length() > 0) {
-      letters = letters.substring(0, letters.length()-1);
+    if (sentence.length() > 0) {
+      sentence = sentence.substring(0, sentence.length()-1);
     }
   } else if (allowedChar.contains(key+"")) {  // adding an empty string turns a char into a String
-    letters = letters+key;
+    sentence = sentence+key;
   }
 }
 
