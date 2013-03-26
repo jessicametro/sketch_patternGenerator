@@ -73,6 +73,7 @@ String allowedChar = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXC
 
 void setup() {
   size(100, 100);
+  noLoop();
   fontRoboto = loadFont("Roboto-Thin-12.vlw");
   textFont(fontRoboto);
   textAlign(CENTER);
@@ -84,7 +85,9 @@ void setup() {
 
 void draw() {
   background(255);
-  parseSentence(sentence);
+  PGraphics unit = parseSentence(sentence);
+  println("PGraphics: "+unit);
+  image(unit, 0, 0);
   fill(0);
   text(sentence, 50, 50);
 }
@@ -101,6 +104,7 @@ void keyPressed() {
   } else if (allowedChar.contains(key+"")) {  // adding an empty string turns a char into a String
     sentence = sentence+key;
   }
+  redraw();
 }
 
 

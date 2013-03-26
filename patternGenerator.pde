@@ -14,7 +14,10 @@ PGraphics parseSentence(String sentence) {
     drawPattern(pg, tokens, avgHeight);
     return pg;
   } else {
-    return createGraphics(10, 10);
+    PGraphics pg = createGraphics(10, 10);
+    pg.beginDraw();
+    pg.endDraw();
+    return pg;
   }
 }
 
