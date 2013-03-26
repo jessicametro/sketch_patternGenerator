@@ -84,9 +84,6 @@ void setup() {
 
 void draw() {
   background(255);
-  noStroke();
-  fill(0);
-  rect(0, 0, 5, 2);
   parseSentence(sentence);
   fill(0);
   text(sentence, 50, 50);

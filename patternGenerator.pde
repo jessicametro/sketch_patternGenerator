@@ -2,13 +2,20 @@
 /**
 parseSentence takes a String of text and generates a pattern.
 INPUT : String sentence is an entire block of text including spaces and punctuation (e.g. "hello world!"). 
-OUTPUT : 
+OUTPUT : PGraphics of the textblock without repeating.
 **/
-void parseSentence(String sentence) {
+PGraphics parseSentence(String sentence) {
   String[] tokens = sentenceTokenizer(sentence);
-  float avgHeight = avgLength(sentence);
+  int avgHeight = round(avgLength(sentence));
   println("avgHeight: "+avgHeight);
   println("tokens: "+Arrays.toString(tokens));
+  if (avgHeight >= 1.0 && sentence.length() >= 1.0) {
+    PGraphics pg = createGraphics(sentence.length(), avgHeight);
+    drawPattern(pg, tokens, avgHeight);
+    return pg;
+  } else {
+    return createGraphics(10, 10);
+  }
 }
 
 
@@ -17,7 +24,12 @@ void parseSentence(String sentence) {
 wordToColor takes a String containing a single word without punctuation or space and generates a color.
 **/
 color wordToColor(String word) {
-  return color(0,0,0);
+  if (isWord(word) == true) {
+    return color(0,0,0);
+  } else {
+    return color(255,255,255);
+  }
+  
 }
 
 
@@ -65,9 +77,20 @@ String[] sentenceTokenizer(String sentence) {
 
 
 /**
-
+drawPattern 
 **/
-
+void drawPattern(PGraphics pg, String[] tokens, int avgHeight) {
+  pg.beginDraw();
+  int pgX = 0;
+  for (int i = 0; i < tokens.length; i += 1) {
+    String token = tokens[i];
+    pg.fill(wordToColor(token));
+    pg.noStroke();
+    pg.rect(pgX, 0, token.length(), avgHeight);
+    pgX += token.length();
+  }
+  pg.endDraw();
+}
 
 
 
