@@ -31,9 +31,16 @@ void setup() {
 void draw() {
   background(0, 0, 100);
   PGraphics unit = parseSentence(sentence);
-  for (int i = 0; i < 10; i += 1) {
-    int x = ( unit.width * i) % 100;  // x position is the unit's width until it reaches the end of the sketch
-    int y = (unit.width * i) / 100 * unit.height;  // y position is the current row times the height of the unit
+  boolean keepGoing = true;
+  for (int i = 0; keepGoing; i += 1) {
+    int x = ( unit.width * i ) % width;  // x position is the unit's width until it reaches the end of the sketch
+    int y = ( unit.width * i ) / width * unit.height;  // y position is the current row times the height of the unit
+    if (x < unit.width) {
+      image(unit, x-unit.width, y);
+    }
+    if (y > height) {
+      keepGoing = false;
+    }
     image(unit, x, y);
   }
   fill(0);
