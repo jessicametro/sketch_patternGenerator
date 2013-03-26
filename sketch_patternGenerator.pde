@@ -1,3 +1,9 @@
+/* IMPORTS */
+
+import java.util.Arrays;
+
+
+
 /* VARIABLES */
 
 PFont fontRoboto;
@@ -62,6 +68,7 @@ float svZ = ( 26 / 26 * 100 );
 String allowedChar = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!&?.,;:'\" ";
 
 
+
 /* SETUP */
 
 void setup() {
@@ -80,13 +87,14 @@ void draw() {
   noStroke();
   fill(0);
   rect(0, 0, 5, 2);
+  parseSentence(sentence);
   fill(0);
   text(sentence, 50, 50);
 }
 
 
 
-/* */
+/*  */
 
 void keyPressed() {
   if (key == BACKSPACE) {
