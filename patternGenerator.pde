@@ -23,6 +23,19 @@ color wordToColor(String word) {
 
 
 /**
+isWord takes a String (token) and determines whether it is a word or not (i.e. space, punctuation, etc).
+**/
+boolean isWord(String token) {
+  if (token.length() >= 1 && "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM".contains(token.substring(0, 1)) == true) {
+    return true;
+  } else {
+    return false; 
+  }
+}
+
+
+
+/**
 avgLength is the average length of all of the words in a String.
 **/
 float avgLength(String sentence) {
@@ -31,7 +44,7 @@ float avgLength(String sentence) {
   String[] tokens = sentenceTokenizer(sentence);
   for (int i = 0; i < tokens.length; i += 1) {        // tokens is an Array
     String token = tokens[i];                         // token is a String
-    if (token.length() >= 1 && "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM".contains(token.substring(0, 1)) == true) {
+    if (isWord(token)) {
       numOfWords += 1;
       wordsLength += token.length();
     } 
