@@ -1,7 +1,5 @@
 /* IMPORTS */
 
-import java.util.Arrays;
-
 
 
 /* VARIABLES */
@@ -49,17 +47,33 @@ void draw() {
 
 
 
-/*  */
+/* KEYPRESSED */
 
 void keyPressed() {
+  println("keypressed is "+key);
   if (key == BACKSPACE) {
     if (sentence.length() > 0) {
       sentence = sentence.substring(0, sentence.length()-1);
     }
   } else if (allowedChar.contains(key+"")) {  // adding an empty string turns a char into a String
     sentence = sentence+key;
+    println("the sentence is:" +sentence);
   }
   redraw();
 }
 
 
+
+/* SAVE PATTERN */
+
+void savePattern() {
+  saveFrame();
+}
+
+
+
+/* UPLOAD IMAGE */
+
+void uploadImage() {
+  println("uploading the image now");
+}
