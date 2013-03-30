@@ -16,7 +16,7 @@ String allowedChar = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXC
 /* SETUP */
 
 void setup() {
-  size(100, 100);
+  size(840, 500);
   colorMode(HSB, 360, 100, 100);
   noLoop();
   fontRoboto = loadFont("Roboto-Thin-12.vlw");

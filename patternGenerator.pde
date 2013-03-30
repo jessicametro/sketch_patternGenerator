@@ -1,3 +1,7 @@
+/* VARIABLES */
+int s = 4;   // s = scale
+
+
 
 /**
 parseSentence takes a String of text and generates a pattern.
@@ -10,7 +14,7 @@ PGraphics parseSentence(String sentence) {
   println("avgHeight: "+avgHeight);
   println("tokens: "+Arrays.toString(tokens));
   if (avgHeight >= 1.0 && sentence.length() >= 1.0) {
-    PGraphics pg = createGraphics(sentence.length(), avgHeight);
+    PGraphics pg = createGraphics(sentence.length()*s, avgHeight*s);
     drawPattern(pg, tokens, avgHeight);
     return pg;
   } else {
@@ -182,22 +186,11 @@ void drawPattern(PGraphics pg, String[] tokens, int avgHeight) {
     String token = tokens[i];
     pg.fill(wordToColor(token));
     pg.noStroke();
-    pg.rect(pgX, 0, token.length(), avgHeight);
+    pg.rect(pgX*s, 0, token.length()*s, avgHeight*s);
     pgX += token.length();
   }
   pg.endDraw();
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
