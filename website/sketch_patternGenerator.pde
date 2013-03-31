@@ -32,7 +32,8 @@ void draw() {
   boolean keepGoing = true;
   for (int i = 0; keepGoing; i += 1) {
     int x = ( unit.width * i ) % width;  // x position is the unit's width until it reaches the end of the sketch
-    int y = ( unit.width * i ) / width * unit.height;  // y position is the current row times the height of the unit
+    int y = (int)(int( unit.width * i ) / (int)(width)) * unit.height;  // y position is the current row times the height of the unit
+    /* println("y is: "+y); */
     if (x < unit.width) {
       image(unit, x-unit.width, y);
     }
@@ -42,7 +43,7 @@ void draw() {
     image(unit, x, y);
   }
   fill(0);
-  text(sentence, 50, 50);
+  /* text(sentence, 50, 50); */
 }
 
 
