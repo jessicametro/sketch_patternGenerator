@@ -62,7 +62,10 @@ void keyPressed() {
   redraw();
 }
 
-
+void setSentence(String newSentence) {
+	sentence = newSentence;
+	redraw();
+}
 
 /* SAVE PATTERN */
 
@@ -97,7 +100,7 @@ PGraphics parseSentence(String sentence) {
     drawPattern(pg, tokens, avgHeight);
     return pg;
   } else {
-    PGraphics pg = createGraphics(10, 10);
+    PGraphics pg = createGraphics(100, 100);
     pg.beginDraw();
     pg.endDraw();
     return pg;

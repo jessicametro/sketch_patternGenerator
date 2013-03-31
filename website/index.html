@@ -92,11 +92,22 @@
 			<script type="text/javascript">alert("Your browser does not support the canvas tag.");</script>
 		<![endif]-->
 		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="processing.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			// convenience function to get the id attribute of generated sketch html element
 			function getProcessingSketchId () { return 'sketchpatternGenerator'; }
 		</script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#textArea').keyup(function(){
+					var text = $('#textArea').val();
+					var processingInstance = Processing.getInstanceById('sketchpatternGenerator');
+					processingInstance.setSentence(text);
+				});
+			});
+		</script>
+		
 	</head>
 	
 	<body>
@@ -124,6 +135,9 @@
 	    	<div id="saveButton">
 				<h3>save</h3>
 			</div>
+			
+				<textarea id="textArea" name="textarea" rows="10" cols="50">Write something here</textarea>
+			
 		</div>
 	</body>
 </html>
