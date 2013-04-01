@@ -1,10 +1,15 @@
 /* IMPORTS */
 
+/* @pjs font="Roboto-Thin.ttf"; */
+
 
 
 /* VARIABLES */
 
-PFont fontRoboto;
+String line1 = "Begin typing to generate a pattern.";
+String line2 = "Try words, sentences, and even paragraphs.";
+String line3 = "You can save it when you’re done!";
+
 String sentence = "";
 
 String allowedChar = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!&?.,;:'\" ";
@@ -17,7 +22,7 @@ void setup() {
   size(840, 500);
   colorMode(HSB, 360, 100, 100);
   noLoop();
-  fontRoboto = loadFont("Roboto-Thin-12.vlw");
+  fontRoboto = createFont("Roboto-Thin.ttf", 38);
   textFont(fontRoboto);
   textAlign(CENTER);
 }
@@ -29,22 +34,27 @@ void setup() {
 void draw() {
   colorMode(HSB, 360, 100, 100);
   background(0, 0, 100);
-  PGraphics unit = parseSentence(sentence);
-  boolean keepGoing = true;
-  for (int i = 0; keepGoing; i += 1) {
-    int x = ( unit.width * i ) % width;  // x position is the unit's width until it reaches the end of the sketch
-    int y = (int)(int( unit.width * i ) / (int)(width)) * unit.height;  // y position is the current row times the height of the unit
-    /* println("y is: "+y); */
-    if (x < unit.width) {
-      image(unit, x-unit.width, y);
-    }
-    if (y > height) {
-      keepGoing = false;
-    }
-    image(unit, x, y);
-  }
-  fill(0);
-  /* text(sentence, 50, 50); */
+  if (sentence.length() == 0) {
+    fill(0, 0, 0);
+    text(line1, 420, 70);
+    text(line2, 420, 120);
+    text(line3, 420, 170);
+  } else {
+	  PGraphics unit = parseSentence(sentence);
+	  boolean keepGoing = true;
+	  for (int i = 0; keepGoing; i += 1) {
+		int x = ( unit.width * i ) % width;  // x position is the unit's width until it reaches the end of the sketch
+		int y = (int)(int( unit.width * i ) / (int)(width)) * unit.height;  // y position is the current row times the height of the unit
+		/* println("y is: "+y); */
+		if (x < unit.width) {
+		  image(unit, x-unit.width, y);
+		}
+		if (y > height) {
+		  keepGoing = false;
+		}
+		image(unit, x, y);
+	  }
+   }
 }
 
 

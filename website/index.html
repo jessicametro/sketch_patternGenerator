@@ -60,7 +60,23 @@
 				position: relative;
 				top: 92px; /* 108-16 */
 			}
-			.current {
+			h2 a:link {
+				text-decoration: none;
+				color: #666;
+			}
+			h2 a:visited {
+				text-decoration: none;
+				color: #666;
+			}
+			h2 a:hover {
+				text-decoration: none;
+				color: #bbb;
+			}
+			h2 a:active {
+				text-decoration: none;
+				color: #bbb;
+			}
+			h2.current a {
 				color: #fff;
 			}
 			canvas { 
@@ -238,9 +254,9 @@
 			<div id="header">
 				<h1>type patterns</h1>
 				<div id="navigation">
-					<h2>about</h2>
-					<h2>gallery</h2>
-					<h2 class="current">type a pattern</h2>
+					<h2><a href="about.html">about</a></h2>
+					<h2><a href="gallery.html">gallery</a></h2>
+					<h2 class="current"><a href="index.html">type a pattern</a></h2>
 				</div>
 			</div>
 		</div>
