@@ -21,7 +21,6 @@
 				margin-left: auto;
 				margin-right: auto;
 			}
-			
 			a img { 
 				border: 0px solid transparent;
 			}
@@ -105,8 +104,35 @@
 				font-size: 16px;
 				line-height: 22px;
 				color: #000;
-				margin-left: 0px;
-				margin-right: 100px;
+				margin-left: 50px;
+				margin-right: 50px;
+			}
+			.par a:link {
+				text-decoration: none;
+			}
+			.par a:visited {
+				text-decoration: none;
+			}
+			.par a:hover {
+				text-decoration: none;
+				padding-bottom: 2px;
+				border-bottom: 1px solid #22aaaa; /* #c31736 */
+			}
+			.par a:active {
+				text-decoration: none;
+				padding-bottom: 2px;
+				border-bottom: 1px solid #22aaaa; /* #c31736 */
+			}
+			.par a {
+				text-decoration: none;
+				color: #229999; /* #c31736 */
+			}
+			.title {
+				font-weight: 400;
+				font-style: italic; /*
+				font-family: 'Overlock', cursive;
+				font-size: 18px;
+				text-transform: lowercase; */
 			}
 		</style>
 	</head>
@@ -123,14 +149,14 @@
 			</div>
 		</div>
 		<div id="content">
-			<p>
-				Type Patterns is a pattern generator in which every letter is assigned a number and is combined with the other letters in each word to create a color. Each word is one unit of the pattern. The length of each unit is determined by the length of each word. The height of all the units is determined by the average length of each word. Punctuation and spaces are white, providing white space to the repeated pattern.
+			<p class="par">
+				<span class="title">Type Patterns</span> is a pattern generator in which every letter is assigned a number and is combined with the other letters in each word to create a color. Each word is one unit of the pattern. The length of each unit is determined by the length of each word. The height of all the units is determined by the average length of each word. Punctuation and spaces are white, providing white space to the repeated pattern.
 			</p>
-			<p>
+			<p class="par">
 				Experiment with different combinations of letters, words, sentences, and even full paragraphs to produce a unique pattern.
 			</p>
-			<p>
-				Type Patterns was created by Jessica Metro using <a href="http://processing.org/" target="_blank">Processing</a> and <a href="http://processingjs.org/" target="_blank">Processing.js</a>. Check it out on <a href="https://github.com/jessicametro/sketch_patternGenerator" target="_blank">GitHub</a>.
+			<p class="par">
+				<span class="title">Type Patterns</span> was created by <a href="http://www.jessicametro.com/" target="_blank">Jessica Metro</a> using <a href="http://processing.org/" target="_blank">Processing</a> and <a href="http://processingjs.org/" target="_blank">Processing.js</a>. Check it out on <a href="https://github.com/jessicametro/sketch_patternGenerator" target="_blank">GitHub</a>.
 			</p>
 		</div>
 	</body>
