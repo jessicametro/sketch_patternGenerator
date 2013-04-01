@@ -4,9 +4,10 @@ require('config.php');
 
 $images = array();
 foreach(glob($IMAGES_DIRECTORY.'/*') as $filename){
-	$images[] = $filename;
+	$images[filemtime($filename)] = $filename;
 }
 
+ksort($images);
 echo json_encode($images);
 
 ?>
