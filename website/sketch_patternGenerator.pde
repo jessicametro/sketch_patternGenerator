@@ -136,7 +136,7 @@ color wordToColor(String word, PGraphics pg) {
     float allSat = 0;
     float numOfSat = 0;
     for (int i = 1; i < word.length(); i += 3) {
-      char thisChar = word.charAt(i);
+      int thisChar = word.charCodeAt(i);
       float thisSat = charToSat(thisChar);
       allSat += thisSat;
       numOfSat += 1;
@@ -147,7 +147,7 @@ color wordToColor(String word, PGraphics pg) {
     float allVal = 0;
     float numOfVal = 0;
     for (int i = 2; i < word.length(); i += 3) {
-      char thisChar = word.charAt(i);
+      int thisChar = word.charCodeAt(i);
       float thisVal = charToVal(thisChar);
       allVal += thisVal;
       numOfVal += 1;
@@ -172,7 +172,7 @@ int charToNum(int input) {
   if (input >= "0".charCodeAt(0) && input <= "9".charCodeAt(0)) {  // if a character is a number
     return 0;
   } else if (input >= "a".charCodeAt(0) && input <= "z".charCodeAt(0)) { // if a character is a letter
-    return input - 'a' + 1;
+    return input - "a".charCodeAt(0) + 1;
   } else {
     return 0;
   }
@@ -186,7 +186,7 @@ charToHue takes a char and returns the hue
 INPUT: char
 OUTPUT: float
 **/
-float charToHue(char input) {
+float charToHue(int input) {
   int i = charToNum(input);
   return ( i / 27.0 * 360.0 );
 }
@@ -198,7 +198,7 @@ charToSat takes a char and returns the saturation
 INPUT: char
 OUTPUT: float
 **/
-float charToSat(char input) {
+float charToSat(int input) {
   int i = charToNum(input);
   return ( i / 26.0 * 100.0 );
 }
@@ -210,7 +210,7 @@ charToVal takes a char and retursn the value
 INPUT: char
 OUTPUT: float
 **/
-float charToVal(char input) {
+float charToVal(int input) {
   int i = charToNum(input);
   return ( i / 26.0 * 100.0 );
 }
