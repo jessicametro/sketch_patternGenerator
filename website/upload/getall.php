@@ -8,6 +8,6 @@ foreach(glob($IMAGES_DIRECTORY.'/*') as $filename){
 }
 
 ksort($images);
-echo json_encode($images);
+echo json_encode(array_reverse($images));
 
 ?>
