@@ -56,10 +56,14 @@
 				outline: 0px; 
 			}
 			#content { 
-				margin: 40px auto 40px auto; 
+				margin: 40px auto 40px auto;
 				width: 840px;  
 				overflow: auto;
 				/* background-color: #eee; */
+			}
+			#gallery {
+				width: 849px;
+				position: fixed;
 			}
 			#saveButton {
 				background-image: url("../images/save_background.png");
@@ -136,6 +140,11 @@
 				font-size: 18px;
 				text-transform: lowercase; */
 			}
+			.uploaded {
+				width: 274px;
+				height: 163px;
+				margin: 0 9px 3px 0;
+			}
 		</style>
 		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -145,7 +154,7 @@
 				//download all the images by making a call to the getall.php
 				$.getJSON("/upload/getall.php", function(data) {
 					//after we have the result, we make an image element for each, and add it to #content
-					var target = $("#content"); //save our parent target to a var so we don't need to keep looking it up.
+					var target = $("#gallery"); //save our parent target to a var so we don't need to keep looking it up.
 					$.each(data, function(key, val) {
 						$("<img class='uploaded' src='upload/"+val+"'/>").appendTo(target);
 					});
@@ -167,7 +176,8 @@
 			</div>
 		</div>
 		<div id="content">
-			
+			<div id="gallery">
+			</div>
 		</div>
 	</body>
 </html>
