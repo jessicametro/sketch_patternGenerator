@@ -45,7 +45,7 @@ void draw() {
 	  for (int i = 0; keepGoing; i += 1) {
 		int x = ( unit.width * i ) % width;  // x position is the unit's width until it reaches the end of the sketch
 		int y = (int)(int( unit.width * i ) / (int)(width)) * unit.height;  // y position is the current row times the height of the unit
-		/* println("y is: "+y); */
+		// println("y is: "+y);
 		if (x < unit.width) {
 		  image(unit, x-unit.width, y);
 		}
@@ -62,14 +62,14 @@ void draw() {
 /* KEYPRESSED */
 
 void keyPressed() {
-  println("keypressed is "+key);
+  //println("keypressed is "+key);
   if (key == BACKSPACE) {
     if (sentence.length() > 0) {
       sentence = sentence.substring(0, sentence.length()-1);
     }
   } else if (allowedChar.contains(key+"")) {  // adding an empty string turns a char into a String
     sentence = sentence+key;
-    println("the sentence is:" +sentence);
+    //println("the sentence is:" +sentence);
   }
   redraw();
 }
@@ -91,7 +91,7 @@ void savePattern() {
 
 void uploadImage() {
   upload($p, 'upload/upload.php');
-  println("uploading the image now");
+  //println("uploading the image now");
 }
 
 
@@ -119,7 +119,7 @@ OUTPUT : PGraphics of the textblock without repeating.
 PGraphics parseSentence(String sentence) {
   String[] tokens = sentenceTokenizer(sentence);
   int avgHeight = round(avgLength(sentence));
-  println("avgHeight: "+avgHeight);
+  //println("avgHeight: "+avgHeight);
   //println("tokens: "+Arrays.toString(tokens));
   if (avgHeight >= 1.0 && sentence.length() >= 1.0) {
     PGraphics pg = createGraphics(sentence.length()*s, avgHeight*s);
@@ -177,7 +177,7 @@ color wordToColor(String word, PGraphics pg) {
       numOfVal += 1;
       b = allVal / numOfVal;
     }
-    println("color: h:"+h+" s:"+s+" b:"+b);
+    //println("color: h:"+h+" s:"+s+" b:"+b);
     return pg.color(h, s, b);
   } else {
     return pg.color(0, 0, 100); // white
@@ -268,7 +268,7 @@ float avgLength(String sentence) {
       wordsLength += token.length();
     } 
   }
-  println(wordsLength + "/" + numOfWords + "=" + (wordsLength / numOfWords));
+  //println(wordsLength + "/" + numOfWords + "=" + (wordsLength / numOfWords));
   return wordsLength / numOfWords;
 }
 
