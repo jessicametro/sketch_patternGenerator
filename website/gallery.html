@@ -141,7 +141,16 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="upload.js" type="text/javascript"></script>
 		<script type="text/javascript">
-		
+			$(document).ready(function(){		
+				//download all the images by making a call to the getall.php
+				$.getJSON("/upload/getall.php", function(data) {
+					//after we have the result, we make an image element for each, and add it to #content
+					var target = $("#content"); //save our parent target to a var so we don't need to keep looking it up.
+					$.each(data, function(key, val) {
+						$("<img class='uploaded' src='upload/"+val+"'/>").appendTo(target);
+					});
+				});
+			});
 		</script>
 		
 	</head>
@@ -158,9 +167,7 @@
 			</div>
 		</div>
 		<div id="content">
-			<div>
-				
-			</div>
+			
 		</div>
 	</body>
 </html>
