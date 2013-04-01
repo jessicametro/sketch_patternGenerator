@@ -80,7 +80,7 @@ void savePattern() {
 /* UPLOAD IMAGE */
 
 void uploadImage() {
-  upload(this, 'upload/upload.php');
+  upload($p, 'upload/upload.php');
   println("uploading the image now");
 }
 
