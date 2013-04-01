@@ -80,9 +80,23 @@ void savePattern() {
 /* UPLOAD IMAGE */
 
 void uploadImage() {
+  upload(this, 'upload/upload.php');
   println("uploading the image now");
 }
+
+
+
+/* SAVE AND UPLOAD IMAGE */
+
+void saveAndUpload() {
+	savePattern();
+	uploadImage();
+}
+
+
+
 /* VARIABLES */
+
 int s = 4;   // s = scale
 
 

@@ -151,6 +151,7 @@
 		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="processing.js" type="text/javascript"></script>
+		<script src="upload.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			// convenience function to get the id attribute of generated sketch html element
 			function getProcessingSketchId () { return 'sketchpatternGenerator'; }
@@ -167,9 +168,15 @@
 					var processingInstance = Processing.getInstanceById('sketchpatternGenerator');
 					processingInstance.setSentence(text);
 				});
+				$("#saveButton").click(function(){
+					save();
+				});
 			});
 			
-			
+			var save = function(){
+				var processingInstance = Processing.getInstanceById('sketchpatternGenerator');
+				processingInstance.saveAndUpload();
+			};
 			
 			/* MAX TEXT LENGTH : http://www.yourinspirationweb.com/en/jquery-tips-tricks-how-to-limit-characters-inside-a-textarea/ */
 						
