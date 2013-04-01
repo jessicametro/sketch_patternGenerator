@@ -80,15 +80,19 @@ canvas {
 }
 
 #content { 
-	margin: 40px auto 40px auto; 
+	margin: 40px auto 40px auto;
+	position: relative; 
 	width: 840px;  
-	overflow: auto;
+	/* overflow: auto; */
 	/* background-color: #eee; */
 }
 
 #gallery {
 	width: 849px;
-	position: fixed;
+	position: absolute;
+	padding-bottom: 31px;
+	top: 0;
+	left: 0;
 }
 
 #saveButton {
