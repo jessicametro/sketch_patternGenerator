@@ -190,3 +190,10 @@ p {
 #spinner {
 	padding-top: 80px;
 }
+
+::selection {
+	background: #22aaaa; /* Safari */
+	}
+::-moz-selection {
+	background: #22aaaa; /* Firefox */
+}
