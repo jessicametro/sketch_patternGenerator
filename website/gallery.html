@@ -35,12 +35,13 @@
 				  top: 'auto', // Top position relative to parent in px
 				  left: 'auto' // Left position relative to parent in px
 				};
-				var target = document.getElementById('foo');
+				var target = document.getElementById('spinner');
 				var spinner = new Spinner(opts).spin(target);
 				
 				/* upload.js | https://github.com/rjmarsan/upload.js */
 				//download all the images by making a call to the getall.php
 				$.getJSON("/upload/getall.php", function(data) {
+					spinner.stop();
 					//after we have the result, we make an image element for each, and add it to #content
 					var target = $("#gallery"); //save our parent target to a var so we don't need to keep looking it up.
 					$.each(data, function(key, val) {
@@ -73,7 +74,7 @@
 			</div>
 		</div>
 		<div id="content">
-			<div class="spinner"></div>
+			<div id="spinner"></div>
 			<div id="gallery">
 			</div>
 		</div>

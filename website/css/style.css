@@ -186,3 +186,7 @@ p {
 	height: 163px;
 	margin: 0 9px 3px 0;
 }
+
+#spinner {
+	padding-top: 80px;
+}
