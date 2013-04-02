@@ -1,3 +1,9 @@
+/* PLUGINS USED:
+	upload.js : RJ Marsan : https://github.com/rjmarsan/upload.js
+*/
+
+
+
 /* IMPORTS */
 
 /* @pjs font="Roboto-Thin.ttf"; */
@@ -79,6 +85,8 @@ void setSentence(String newSentence) {
 	redraw();
 }
 
+
+
 /* SAVE PATTERN */
 
 void savePattern() {
@@ -90,7 +98,7 @@ void savePattern() {
 /* UPLOAD IMAGE */
 
 void uploadImage() {
-  upload($p, 'upload/upload.php');
+  upload($p, 'upload/upload.php');  //  https://github.com/rjmarsan/upload.js
   //println("uploading the image now");
 }
 
